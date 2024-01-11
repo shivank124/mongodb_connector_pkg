@@ -5,7 +5,7 @@ with open('README.md', 'r', encoding='utf-8') as f:
     long_description = f.read()     
    
 
-__version__ = "0.0.2"
+__version__ = "0.0.3"
 REPO_NAME = "mongodb_connector_pkg"
 PKG_NAME= "mongoauto"
 AUTHOR_USER_NAME = "shivank124"
@@ -25,7 +25,7 @@ setup(
     },
     package_dir={"": "src"},
     packages=find_packages(where="src"),
-    install_require = ['pymongo','pymongo[srv]','dnspython','pandas','numpy','ensure','pytest']
+    install_requires = ['pymongo','pymongo[srv]','dnspython','pandas','numpy','ensure','pytest']
     )
 
 

@@ -1,17 +1,17 @@
 from setuptools import setup, find_packages
 from typing import List
 
-HYPEN_E_DOT = '-e .'
+# HYPEN_E_DOT = '-e .'
 
-def get_requirement(file_path:str) -> List[str]:
-    requirements = []
-    with open(file_path) as f:
-        requirements = f.readlines()
-        requirements = [req.replace("\n","")for req in requirements]
+# def get_requirement(file_path:str) -> List[str]:
+#     requirements = []
+#     with open(file_path) as f:
+#         requirements = f.readlines()
+#         requirements = [req.replace("\n","")for req in requirements]
 
-        if HYPEN_E_DOT in requirements:
-            requirements.remove(HYPEN_E_DOT)
-    return requirements
+#         if HYPEN_E_DOT in requirements:
+#             requirements.remove(HYPEN_E_DOT)
+#     return requirements
 
 
 with open('README.md', 'r', encoding='utf-8') as f:
@@ -22,7 +22,7 @@ __version__ = "0.0.1"
 REPO_NAME = "mongodb_connector_pkg"
 PKG_NAME= "mongoauto"
 AUTHOR_USER_NAME = "shivank124"
-AUTHOR_EMAIL = "sshivankvishwakarma3@gmail.com"
+AUTHOR_EMAIL = "shivankvishwakarma3@gmail.com"
 
 setup(
     name=PKG_NAME,
@@ -38,6 +38,6 @@ setup(
     },
     package_dir={"": "src"},
     packages=find_packages(where="src"),
-    install_requires = get_requirement("./requirements_dev.txt"),
+    install_requires = ['pymongo','pymongo[srv]','dnspython','pandas','numpy','ensure','pytest']
     
     )
